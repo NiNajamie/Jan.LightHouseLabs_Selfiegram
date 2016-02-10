@@ -13,6 +13,7 @@ import Parse
 
 class SelfieCellTableViewCell: UITableViewCell {
     
+    
     @IBOutlet weak var likeButton: UIButton!
     var post:Post? {
         didSet{
@@ -61,6 +62,8 @@ class SelfieCellTableViewCell: UITableViewCell {
     @IBOutlet weak var usernameLabel: UILabel!
 
     @IBOutlet weak var commentLabel: UILabel!
+    
+    @IBOutlet weak var heartAnimationView: UIImageView!
     
     override func awakeFromNib() {
         super.awakeFromNib()
@@ -150,5 +153,28 @@ class SelfieCellTableViewCell: UITableViewCell {
 
         // Configure the view for the selected state
     }
+    
+    func tapAnimation() {
+        
+        // set heartAnimationView to be very tiny and not hidden
+        self.heartAnimationView.transform = CGAffineTransformMakeScale(0, 0)
+        self.heartAnimationView.hidden = false
+        
+        //animation for 1 second, no delay
+        UIView.animateWithDuration(1.0, delay: 0, options: [], animations: { () -> Void in
+            
+            // during our animation change heartAnimationView to be 3X what it is on storyboard
+            self.heartAnimationView.transform = CGAffineTransformMakeScale(3, 3)
+            
+            }) { (success) -> Void in
+                
+                // when animation is complete set heartAnimationView to be hidden
+                self.heartAnimationView.hidden = true
+        }
+        
+        likeButtonClicked(likeButton)
+        
+    }
 
 }
+
