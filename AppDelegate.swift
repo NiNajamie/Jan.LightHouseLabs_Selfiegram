@@ -26,8 +26,8 @@ class AppDelegate: UIResponder, UIApplicationDelegate {
         Post.registerSubclass()
         Activity.registerSubclass()
         
-        Parse.setApplicationId("KTjUYNU4BqsBL2FeOXBFp5zHSB0hSR8fclCkaDYg",
-            clientKey: "EF67LLhMG3BBR6cAaeuao7TSi6Qb6VP15tEPpwEo")
+        Parse.setApplicationId("5CDeHX2xNhW11QZXr9AvtBbEQY0lft4jpUuMFt9g",
+            clientKey: "SO1UFKR9k8RsLx1FsXzBjyI6IjsKxm2K0jcm48dG")
         
         // [Optional] Track statistics around application opens.
         PFAnalytics.trackAppOpenedWithLaunchOptions(launchOptions)

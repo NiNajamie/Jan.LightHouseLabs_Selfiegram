@@ -52,7 +52,12 @@ class FeedViewController: UITableViewController, UIImagePickerControllerDelegate
     
     override func viewDidLoad() {
         super.viewDidLoad()
+        
+        navigationItem.titleView = UIImageView(image: UIImage(named: "Selfigram-logo"))
+
         getPosts()
+        
+        
 //        if let query = Post.query() {
 //            query.orderByDescending("createdAt")
 //            query.includeKey("user")
@@ -169,6 +174,17 @@ class FeedViewController: UITableViewController, UIImagePickerControllerDelegate
         return cell
     }
 
+    //photo library
+    @IBAction func photoLibraryButtonPressed(sender: AnyObject) {
+        let pickerController = UIImagePickerController()
+        
+        pickerController.delegate = self
+        
+        pickerController.sourceType = .PhotoLibrary
+        
+        self.presentViewController(pickerController, animated: true, completion: nil)
+    }
+    
     @IBAction func cameraButtonPressed(sender: AnyObject) {
         print("Camera Button Pressed")
         

@@ -12,6 +12,13 @@ class ActivityViewController: UITableViewController {
     
     var activities = [Activity]()
     
+    override func viewDidLoad() {
+        super.viewDidLoad()
+        
+        navigationItem.titleView = UIImageView(image: UIImage(named: "Selfigram-logo"))
+        
+    }
+    
     override func numberOfSectionsInTableView(tableView: UITableView) -> Int {
         return 1
     }
